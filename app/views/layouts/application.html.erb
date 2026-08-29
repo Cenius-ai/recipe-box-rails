@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= content_for(:title) || "Recipe Box" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Your personal collection of tried-and-true recipes.">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= yield :head %>
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <%= stylesheet_link_tag "application" %>
+  </head>
+
+  <body>
+    <header class="app-header">
+      <div class="header-inner">
+        <%= link_to "Recipe Box", root_path, class: "app-logo", "aria-label": "Recipe Box home" %>
+        <nav class="app-nav" aria-label="Main navigation">
+          <%= link_to "Home", root_path, class: current_page?(root_path) ? "nav-current" : nil %>
+          <%= link_to "Recipes", recipes_path, class: current_page?(recipes_path) ? "nav-current" : nil %>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <%= yield %>
+    </main>
+
+    <footer class="app-footer">
+      <p>Recipe Box &mdash; a personal recipe collection.</p>
+    </footer>
+  </body>
+</html>

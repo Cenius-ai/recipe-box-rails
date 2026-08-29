@@ -1,0 +1,18 @@
+<% content_for :title, "#{@recipe.name} — Recipe Box" %>
+
+<article class="recipe-detail" aria-label="<%= @recipe.name %> recipe details">
+  <h1><%= @recipe.name %></h1>
+  <p class="detail-summary"><%= @recipe.summary %></p>
+
+  <div class="detail-section">
+    <h2>Ingredients</h2>
+    <pre><%= @recipe.ingredients %></pre>
+  </div>
+
+  <div class="detail-section">
+    <h2>Instructions</h2>
+    <pre><%= @recipe.instructions %></pre>
+  </div>
+
+  <%= link_to "← Back to all recipes", recipes_path, class: "back-link" %>
+</article>

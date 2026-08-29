@@ -1,0 +1,24 @@
+<% content_for :title, "All Recipes — Recipe Box" %>
+
+<div class="page-heading">
+  <h1>All Recipes</h1>
+  <p><%= pluralize(@recipes.count, "recipe") %> in your collection.</p>
+</div>
+
+<% if @recipes.any? %>
+  <ul class="recipe-list" aria-label="Recipe list">
+    <% @recipes.each do |recipe| %>
+      <li>
+        <%= link_to recipe_path(recipe), class: "recipe-card" do %>
+          <h2><%= recipe.name %></h2>
+          <p class="card-summary"><%= recipe.summary %></p>
+          <div class="card-meta">
+            <span><%= recipe.created_at.strftime("%B %d, %Y") %></span>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No recipes yet. Run the seed task to populate your collection.</p>
+<% end %>
