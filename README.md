@@ -29,7 +29,7 @@ _Local clone? See [Quick start](#quick-start) below. cenius.ai is the zero-setup
 
 ## Architecture
 
-A self-contained Ruby on Rails project (1,898 files): top-level directories include `app/`, `bin/`, `config/`, `db/`, `lib/`, `log/`, `public/`, `storage/`. `install.sh` takes care of packages and initial data in a single pass; nothing else is required before launching. See [`INSTALL.md`](INSTALL.md) for complete setup instructions.
+A self-contained Ruby on Rails project (1,887 files): top-level directories include `app/`, `bin/`, `config/`, `db/`, `lib/`, `log/`, `public/`, `storage/`. `install.sh` takes care of packages and initial data in a single pass; nothing else is required before launching. See [`INSTALL.md`](INSTALL.md) for complete setup instructions.
 
 ## Quick start
 
